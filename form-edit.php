@@ -1,17 +1,17 @@
 <?php
 
-include("config.php");
+include("../config.php");
 
 if (!isset($_GET['id'])) {
 	// kalau tidak ada id di query string
-	header('Location: list-siswa.php');
+	header('Location: list-guru.php');
 }
 
 //ambil id dari query string
 $id = $_GET['id'];
 
 // buat query untuk ambil data dari database
-$sql = "SELECT * FROM calon_siswa WHERE id=$id";
+$sql = "SELECT * FROM guru WHERE id=$id";
 $query = mysqli_query($db, $sql);
 $siswa = mysqli_fetch_assoc($query);
 
@@ -27,12 +27,12 @@ if (mysqli_num_rows($query) < 1) {
 <html>
 
 <head>
-	<title>Formulir Edit Siswa | SMK Coding</title>
+	<title>Formulir Edit Karyawan | SMK Coding</title>
 </head>
 
 <body>
 	<header>
-		<h3>Formulir Edit Siswa</h3>
+		<h3>Formulir Edit Karyawan</h3>
 	</header>
 
 	<form action="proses-edit.php" method="POST" enctype="multipart/form-data">
@@ -67,14 +67,8 @@ if (mysqli_num_rows($query) < 1) {
 				</select>
 			</p>
 			<p>
-				<label for="sekolah_asal">Sekolah Asal: </label>
-				<input type="text" name="sekolah_asal" placeholder="nama sekolah" value="<?php echo $siswa['sekolah_asal'] ?>" />
-			</p>
-			<p>
-				<label for="foto">Foto Saat Ini: </label><br>
-				<img src="uploads/<?php echo $siswa['foto']; ?>" alt="Foto Siswa" width="150" /><br><br>
-				<label for="foto_baru">Ganti Foto: </label>
-				<input type="file" name="foto_baru" accept="image/*" />
+				<label for="mata_pelajaran">Mata Pelajaran: </label>
+				<input type="text" name="mata_pelajaran" placeholder="mata pelajaran" value="<?php echo $siswa['mata_pelajaran'] ?>" />
 			</p>
 			<p>
 				<input type="submit" value="Simpan" name="simpan" />

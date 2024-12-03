@@ -2,12 +2,12 @@
 <html>
 
 <head>
-	<title>Formulir Pendaftaran Siswa Baru | SMK Coding</title>
+	<title>Formulir Pendaftaran Guru Baru | SMK Coding</title>
 </head>
 
 <body>
 	<header>
-		<h3>Formulir Pendaftaran Siswa Baru</h3>
+		<h3>Formulir Pendaftaran Guru Baru</h3>
 	</header>
 
 	<form action="proses-pendaftaran.php" method="POST" enctype="multipart/form-data">
@@ -38,12 +38,8 @@
 				</select>
 			</p>
 			<p>
-				<label for="sekolah_asal">Sekolah Asal: </label>
-				<input type="text" name="sekolah_asal" placeholder="nama sekolah" />
-			</p>
-			<p>
-				<label for="foto">Upload Foto: </label>
-				<input type="file" name="foto" accept="image/*" />
+				<label for="mata_pelajaran">Mata Pelajaran: </label>
+				<input type="text" name="mata_pelajaran" placeholder="mata pelajaran" />
 			</p>
 			<p>
 				<input type="submit" value="Daftar" name="daftar" />
